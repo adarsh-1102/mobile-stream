@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Stream</title>
+</head>
+<body style="text-align:center;font-family:Arial;margin-top:50px;">
+
+<h2>Mobile Camera Stream</h2>
+<button id="start">Start Camera</button>
+<video id="preview" autoplay playsinline style="width:90%;margin-top:20px;border:2px solid black;border-radius:10px;"></video>
+
+<script>
+const startBtn = document.getElementById("start");
+const video = document.getElementById("preview");
+
+startBtn.onclick = async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        video.srcObject = stream;
+    } catch (err) {
+        alert("Camera access denied: " + err);
+    }
+};
+</script>
+
+</body>
+</html>
