@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laptop View</title>
+</head>
+<body style="text-align:center;font-family:Arial;margin-top:50px;">
+
+<h2>Scan this QR with your phone</h2>
+<div id="qr"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    const url = "https://adarsh-1102.github.io/mobile-stream"; // replace with your GitHub Pages URL later
+    const room = Math.random().toString(36).substring(2, 8);
+
+    new QRCode(document.getElementById("qr"), `${url}/phone.html?room=${room}`);
+</script>
+
+</body>
+</html>
